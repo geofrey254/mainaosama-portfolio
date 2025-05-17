@@ -5,8 +5,23 @@ import Link from 'next/link'
 import { motion } from 'framer-motion'
 import { FaArrowRight, FaUsers } from 'react-icons/fa'
 
-const HeroSection = () => {
+interface HeroBlockProps {
+  block: {
+    heading: string
+    subheading: string
+    description: string
+    hero_image: {
+      url: string
+    }
+  }
+}
+
+export default function HeroSection({ block }: HeroBlockProps) {
   const [isDesktop, setIsDesktop] = useState(true)
+  const heading = block?.heading
+  const subheading = block?.subheading
+  const heroImage = block?.hero_image
+  const description = block?.description
 
   // Handle responsive behavior
   useEffect(() => {
@@ -130,19 +145,15 @@ const HeroSection = () => {
               className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl font-bold text-gray-900 leading-tight tracking-tight"
               variants={fadeInUp}
             >
-              Hon. Peter Maina
-              <span className="block text-emerald-800 mt-3">
-                Leadership with Vision and Integrity
-              </span>
+              {heading}
+              <span className="block text-emerald-800 mt-3 text-3xl">{subheading} </span>
             </motion.h1>
 
             <motion.p
               className="text-lg text-gray-700 leading-relaxed max-w-2xl text-justify"
               variants={fadeInUp}
             >
-              <span className="font-medium italic">Maina Osama</span> — Committed to transforming
-              our community through transparent governance, sustainable development, and inclusive
-              policies. Together, we can build a brighter future for everyone.
+              {description}
             </motion.p>
 
             <motion.div
@@ -180,7 +191,7 @@ const HeroSection = () => {
               {/* Main image with frame */}
               <div className="absolute inset-0 rounded-2xl overflow-hidden bg-white shadow-xl border-8 border-white z-20 transition-all duration-300 hover:shadow-2xl">
                 <Image
-                  src="/port.png"
+                  src={heroImage.url}
                   alt="Hon. Peter Maina (Maina Osama)"
                   fill
                   priority
@@ -197,8 +208,7 @@ const HeroSection = () => {
                 <div className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center p-1">
                   <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center text-emerald-800">
                     <div className="text-center">
-                      <div className="font-bold text-2xl">2025</div>
-                      <div className="text-xs font-medium uppercase tracking-wider">Vision</div>
+                      <div className="font-bold text-2xl"></div>
                     </div>
                   </div>
                 </div>
@@ -210,5 +220,3 @@ const HeroSection = () => {
     </section>
   )
 }
-
-export default HeroSection

@@ -185,7 +185,7 @@ export default function MediaGallery() {
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-3">Media Highlights</h2>
+          <h2 className="text-3xl font-bold text-gray-900 mb-3">Media Highlights</h2>
           <div className="w-24 h-1.5 bg-amber-500 mx-auto rounded-full mb-6"></div>
           <p className="max-w-2xl mx-auto text-lg text-gray-700">
             Moments from our journey together — serving the community, delivering on promises, and
@@ -204,7 +204,7 @@ export default function MediaGallery() {
           {galleryItems.map((item, index) => (
             <motion.div
               key={item.id}
-              className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group"
+              className="relative rounded-xl overflow-hidden shadow-lg cursor-pointer group border-2 border-emerald-600"
               variants={itemVariants}
               whileHover={{ scale: 1.02 }}
               onClick={() => openLightbox(index)}

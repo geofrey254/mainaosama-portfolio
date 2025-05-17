@@ -7,6 +7,7 @@ import Bio from '@/components/homepage/Bio'
 import Impact from '@/components/homepage/Impact'
 import Vision from '@/components/homepage/Vision'
 import MediaGallery from '@/components/homepage/Gall'
+import GetInvolved from '@/components/homepage/CTA'
 import config from '@/payload.config'
 import './styles.css'
 
@@ -29,12 +30,11 @@ export default async function HomePage() {
   return (
     <div>
       <div className="page">
-        <HeroBlock />
-        <Bio />
+        {page.layout?.map((block, index) => renderBlock(block, index))}
         <Impact />
         <Vision />
         <MediaGallery />
-        {page.layout?.map((block, index) => renderBlock(block, index))}
+        <GetInvolved />
       </div>
     </div>
   )
@@ -43,8 +43,10 @@ export default async function HomePage() {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 function renderBlock(block: any, index: number) {
   switch (block.blockType) {
-    // case 'hero':
-    //   return <HeroBlock key={index} block={block} />
+    case 'hero':
+      return <HeroBlock key={index} block={block} />
+    case 'bio':
+      return <Bio key={index} block={block} />
 
     default:
       return null
