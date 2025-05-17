@@ -31,8 +31,6 @@ export default async function HomePage() {
     <div>
       <div className="page">
         {page.layout?.map((block, index) => renderBlock(block, index))}
-        <Impact />
-        <Vision />
         <MediaGallery />
         <GetInvolved />
       </div>
@@ -47,6 +45,10 @@ function renderBlock(block: any, index: number) {
       return <HeroBlock key={index} block={block} />
     case 'bio':
       return <Bio key={index} block={block} />
+    case 'impact':
+      return <Impact key={index} block={block} />
+    case 'vision':
+      return <Vision key={index} block={block} />
 
     default:
       return null

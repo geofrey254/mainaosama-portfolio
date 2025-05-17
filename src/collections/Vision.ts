@@ -55,13 +55,5 @@ export const Vision: CollectionConfig = {
         },
       ],
     },
-
-    {
-      name: 'content',
-      label: 'Content',
-      type: 'richText',
-      required: true,
-      editor: lexicalEditor(),
-    },
   ],
 }

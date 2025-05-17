@@ -8,7 +8,7 @@ export const LandingVision: Block = {
   fields: [
     { name: 'heading', label: 'Heading', type: 'text', required: true },
     {
-      name: 'sub-heading',
+      name: 'subheading',
       label: 'SubHeading',
       type: 'textarea',
       required: true,

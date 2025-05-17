@@ -58,18 +58,23 @@ export const Projects: CollectionConfig = {
       type: 'text',
       required: true,
     },
-    {
-      name: 'metrics',
-      label: 'Metrics',
-      type: 'text',
-      required: true,
-    },
+
     {
       name: 'image',
       label: 'Image',
-      type: 'upload',
-      relationTo: 'media',
+      type: 'array',
+      minRows: 1,
+      maxRows: 4,
       required: true,
+      fields: [
+        {
+          name: 'photo',
+          label: 'Photo',
+          type: 'upload',
+          relationTo: 'media',
+          required: true,
+        },
+      ],
     },
   ],
 }

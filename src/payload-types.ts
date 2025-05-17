@@ -196,7 +196,7 @@ export interface Page {
           }
         | {
             heading: string;
-            'sub-heading': string;
+            subheading: string;
             info: {
               value?: string | null;
               label?: string | null;
@@ -209,18 +209,12 @@ export interface Page {
           }
         | {
             heading: string;
-            'sub-heading': string;
+            subheading: string;
             quote: string;
             visions: (number | Vision)[];
             id?: string | null;
             blockName?: string | null;
             blockType: 'vision';
-          }
-        | {
-            photos: (number | Gallery)[];
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'gallery';
           }
         | {
             clause: string;
@@ -301,8 +295,10 @@ export interface Project {
   impact: string;
   date: string;
   location: string;
-  metrics: string;
-  image: number | Media;
+  image: {
+    photo: number | Media;
+    id?: string | null;
+  }[];
   updatedAt: string;
   createdAt: string;
 }
@@ -321,21 +317,6 @@ export interface Vision {
     point: string;
     id?: string | null;
   }[];
-  content: {
-    root: {
-      type: string;
-      children: {
-        type: string;
-        version: number;
-        [k: string]: unknown;
-      }[];
-      direction: ('ltr' | 'rtl') | null;
-      format: 'left' | 'start' | 'center' | 'right' | 'end' | 'justify' | '';
-      indent: number;
-      version: number;
-    };
-    [k: string]: unknown;
-  };
   updatedAt: string;
   createdAt: string;
 }
@@ -533,7 +514,7 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               heading?: T;
-              'sub-heading'?: T;
+              subheading?: T;
               info?:
                 | T
                 | {
@@ -549,16 +530,9 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               heading?: T;
-              'sub-heading'?: T;
+              subheading?: T;
               quote?: T;
               visions?: T;
-              id?: T;
-              blockName?: T;
-            };
-        gallery?:
-          | T
-          | {
-              photos?: T;
               id?: T;
               blockName?: T;
             };
@@ -642,8 +616,12 @@ export interface ProjectsSelect<T extends boolean = true> {
   impact?: T;
   date?: T;
   location?: T;
-  metrics?: T;
-  image?: T;
+  image?:
+    | T
+    | {
+        photo?: T;
+        id?: T;
+      };
   updatedAt?: T;
   createdAt?: T;
 }
@@ -661,7 +639,6 @@ export interface VisionSelect<T extends boolean = true> {
         point?: T;
         id?: T;
       };
-  content?: T;
   updatedAt?: T;
   createdAt?: T;
 }

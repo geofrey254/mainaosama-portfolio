@@ -176,7 +176,7 @@ export default function Bio({ block }: BioProps) {
               ))}
             </motion.div>
 
-            {/* Quote - simplified */}
+            {/* Quote - simplified g*/}
             <motion.blockquote
               className="border-l-4 border-amber-500 pl-6 my-12 italic text-gray-700 text-xl"
               variants={itemVariants}
