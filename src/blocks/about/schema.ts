@@ -1,3 +1,4 @@
+import { lexicalEditor } from '@payloadcms/richtext-lexical'
 import { Block } from 'payload'
 
 export const About: Block = {
@@ -8,46 +9,14 @@ export const About: Block = {
   fields: [
     { name: 'clause', type: 'textarea', required: true },
     { name: 'photo', label: 'Firm Photo', type: 'upload', relationTo: 'media', required: true },
+    { name: 'title', label: 'Image Title', type: 'text', required: true },
   ],
 }
 
-export const Goals: Block = {
-  slug: 'goals',
+export const Biography: Block = {
+  slug: 'biography',
   admin: {
     group: 'About Page',
   },
-  fields: [
-    { name: 'mission', type: 'textarea', required: true },
-    { name: 'vision', type: 'textarea', required: true },
-  ],
-}
-
-export const Values: Block = {
-  slug: 'core-values',
-  admin: {
-    group: 'About Page',
-  },
-  fields: [
-    {
-      name: 'our_values',
-      label: 'Core Values',
-      type: 'array',
-      minRows: 1,
-      maxRows: 4,
-      fields: [
-        {
-          name: 'title',
-          label: 'Value Title',
-          type: 'text',
-          required: true,
-        },
-        {
-          name: 'description',
-          label: 'Value Description',
-          type: 'textarea',
-          required: true,
-        },
-      ],
-    },
-  ],
+  fields: [{ name: 'bio', type: 'richText', editor: lexicalEditor(), required: true }],
 }

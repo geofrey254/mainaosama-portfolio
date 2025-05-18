@@ -6,7 +6,6 @@ import HeroBlock from '@/components/homepage/HeroBlock'
 import Bio from '@/components/homepage/Bio'
 import Impact from '@/components/homepage/Impact'
 import Vision from '@/components/homepage/Vision'
-import MediaGallery from '@/components/homepage/Gall'
 import GetInvolved from '@/components/homepage/CTA'
 import config from '@/payload.config'
 import './styles.css'
@@ -31,7 +30,6 @@ export default async function HomePage() {
     <div>
       <div className="page">
         {page.layout?.map((block, index) => renderBlock(block, index))}
-        <MediaGallery />
         <GetInvolved />
       </div>
     </div>

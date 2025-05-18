@@ -72,9 +72,7 @@ export interface Config {
     pages: Page;
     projects: Project;
     vision: Vision;
-    gallery: Gallery;
     newsletter: Newsletter;
-    contactaddresses: Contactaddress;
     'payload-locked-documents': PayloadLockedDocument;
     'payload-preferences': PayloadPreference;
     'payload-migrations': PayloadMigration;
@@ -86,9 +84,7 @@ export interface Config {
     pages: PagesSelect<false> | PagesSelect<true>;
     projects: ProjectsSelect<false> | ProjectsSelect<true>;
     vision: VisionSelect<false> | VisionSelect<true>;
-    gallery: GallerySelect<false> | GallerySelect<true>;
     newsletter: NewsletterSelect<false> | NewsletterSelect<true>;
-    contactaddresses: ContactaddressesSelect<false> | ContactaddressesSelect<true>;
     'payload-locked-documents': PayloadLockedDocumentsSelect<false> | PayloadLockedDocumentsSelect<true>;
     'payload-preferences': PayloadPreferencesSelect<false> | PayloadPreferencesSelect<true>;
     'payload-migrations': PayloadMigrationsSelect<false> | PayloadMigrationsSelect<true>;
@@ -149,6 +145,7 @@ export interface User {
 export interface Media {
   id: number;
   alt: string;
+  prefix?: string | null;
   updatedAt: string;
   createdAt: string;
   url?: string | null;
@@ -219,28 +216,10 @@ export interface Page {
         | {
             clause: string;
             photo: number | Media;
+            title: string;
             id?: string | null;
             blockName?: string | null;
             blockType: 'about';
-          }
-        | {
-            mission: string;
-            vision: string;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'goals';
-          }
-        | {
-            our_values?:
-              | {
-                  title: string;
-                  description: string;
-                  id?: string | null;
-                }[]
-              | null;
-            id?: string | null;
-            blockName?: string | null;
-            blockType: 'core-values';
           }
         | {
             title: string;
@@ -275,6 +254,18 @@ export interface Page {
             id?: string | null;
             blockName?: string | null;
             blockType: 'contactAddresses';
+          }
+        | {
+            visions: (number | Vision)[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'visionpage';
+          }
+        | {
+            projects: (number | Project)[];
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'achievement';
           }
       )[]
     | null;
@@ -321,41 +312,12 @@ export interface Vision {
   createdAt: string;
 }
 /**
- * Add Image
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "gallery".
- */
-export interface Gallery {
-  id: number;
-  caption: string;
-  image: number | Media;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
  * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "newsletter".
  */
 export interface Newsletter {
   id: number;
   email: string;
-  updatedAt: string;
-  createdAt: string;
-}
-/**
- * Manage contact address entries
- *
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contactaddresses".
- */
-export interface Contactaddress {
-  id: number;
-  label: string;
-  address: string;
-  phone?: string | null;
-  email?: string | null;
-  mapLink?: string | null;
   updatedAt: string;
   createdAt: string;
 }
@@ -387,16 +349,8 @@ export interface PayloadLockedDocument {
         value: number | Vision;
       } | null)
     | ({
-        relationTo: 'gallery';
-        value: number | Gallery;
-      } | null)
-    | ({
         relationTo: 'newsletter';
         value: number | Newsletter;
-      } | null)
-    | ({
-        relationTo: 'contactaddresses';
-        value: number | Contactaddress;
       } | null);
   globalSlug?: string | null;
   user: {
@@ -461,6 +415,7 @@ export interface UsersSelect<T extends boolean = true> {
  */
 export interface MediaSelect<T extends boolean = true> {
   alt?: T;
+  prefix?: T;
   updatedAt?: T;
   createdAt?: T;
   url?: T;
@@ -541,27 +496,7 @@ export interface PagesSelect<T extends boolean = true> {
           | {
               clause?: T;
               photo?: T;
-              id?: T;
-              blockName?: T;
-            };
-        goals?:
-          | T
-          | {
-              mission?: T;
-              vision?: T;
-              id?: T;
-              blockName?: T;
-            };
-        'core-values'?:
-          | T
-          | {
-              our_values?:
-                | T
-                | {
-                    title?: T;
-                    description?: T;
-                    id?: T;
-                  };
+              title?: T;
               id?: T;
               blockName?: T;
             };
@@ -598,6 +533,20 @@ export interface PagesSelect<T extends boolean = true> {
                     email?: T;
                     id?: T;
                   };
+              id?: T;
+              blockName?: T;
+            };
+        visionpage?:
+          | T
+          | {
+              visions?: T;
+              id?: T;
+              blockName?: T;
+            };
+        achievement?:
+          | T
+          | {
+              projects?: T;
               id?: T;
               blockName?: T;
             };
@@ -644,33 +593,10 @@ export interface VisionSelect<T extends boolean = true> {
 }
 /**
  * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "gallery_select".
- */
-export interface GallerySelect<T extends boolean = true> {
-  caption?: T;
-  image?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
  * via the `definition` "newsletter_select".
  */
 export interface NewsletterSelect<T extends boolean = true> {
   email?: T;
-  updatedAt?: T;
-  createdAt?: T;
-}
-/**
- * This interface was referenced by `Config`'s JSON-Schema
- * via the `definition` "contactaddresses_select".
- */
-export interface ContactaddressesSelect<T extends boolean = true> {
-  label?: T;
-  address?: T;
-  phone?: T;
-  email?: T;
-  mapLink?: T;
   updatedAt?: T;
   createdAt?: T;
 }

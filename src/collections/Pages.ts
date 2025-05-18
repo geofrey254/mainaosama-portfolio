@@ -3,8 +3,10 @@ import type { CollectionConfig } from 'payload'
 import { LandingAbout } from '@/blocks/homepage/home-bio/schema'
 import { LandingImpact } from '@/blocks/homepage/impact/schema'
 import { LandingVision } from '@/blocks/homepage/vision/schema'
-import { About, Goals, Values } from '@/blocks/about/schema'
+import { About } from '@/blocks/about/schema'
 import { Contact, ContactAddresses } from '@/blocks/contactPage/schema'
+import { VisionPage } from '@/blocks/visionPage/schema'
+import { Achievement } from '@/blocks/achievementpage/schema'
 
 export const Pages: CollectionConfig = {
   slug: 'pages',
@@ -34,10 +36,10 @@ export const Pages: CollectionConfig = {
         LandingImpact,
         LandingVision,
         About,
-        Goals,
-        Values,
         Contact,
         ContactAddresses,
+        VisionPage,
+        Achievement,
       ],
     },
   ],
