@@ -15,7 +15,7 @@ export default function AboutHeader() {
   }
 
   return (
-    <div className="relative md:pt-32 md:pb-8 overflow-hidden bg-emerald-50">
+    <section className="relative pt-32 md:pt-36 md:pb-8 overflow-hidden bg-emerald-50">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="text-center">
           <motion.div
@@ -58,6 +58,6 @@ export default function AboutHeader() {
       <div className="absolute top-1/3 right-0 transform -translate-y-1/2">
         <div className="w-48 h-48 bg-amber-100 rounded-full opacity-20 blur-xl"></div>
       </div>
-    </div>
+    </section>
   )
 }
