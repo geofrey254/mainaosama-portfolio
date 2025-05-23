@@ -80,7 +80,6 @@ const Navbar = () => {
     { title: 'Achievements', href: '/achievements' },
 
     { title: 'Media', href: '/media' },
-    { title: 'Contact', href: '/contact' },
   ]
 
   return (
@@ -128,15 +127,15 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Link href="/join">
+            <Link href="/contact">
               <button
-                className={`px-5 py-2.5 rounded-md font-medium transition-all duration-300 shadow-sm ${
+                className={`px-5 py-2.5 rounded-md font-medium transition-all duration-300 shadow-sm cursor-pointer ${
                   isScrolled
                     ? 'bg-amber-600 text-white hover:bg-amber-700 hover:shadow-md'
                     : 'bg-amber-600 text-white hover:bg-amber-700 hover:shadow-md'
                 }`}
               >
-                Join the Movement
+                Contact Us{' '}
               </button>
             </Link>
           </div>
@@ -189,12 +188,12 @@ const Navbar = () => {
                   ))}
                 </div>
                 <div className="px-6 py-4 border-t border-gray-100">
-                  <Link href="/join">
+                  <Link href="/contact">
                     <button
-                      className="w-full px-5 py-3 bg-amber-600 text-white rounded-md font-medium hover:bg-amber-700 transition-colors duration-300 shadow-sm"
+                      className="w-full px-5 py-3 bg-amber-600 text-white rounded-md font-medium hover:bg-amber-700 transition-colors duration-300 shadow-sm cursor-pointer"
                       onClick={() => setMobileMenuOpen(false)}
                     >
-                      Join the Movement
+                      Contact Us{' '}
                     </button>
                   </Link>
                 </div>

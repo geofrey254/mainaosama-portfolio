@@ -61,45 +61,9 @@ export default function KeyPriorities({ block }: VisionProps) {
   return (
     <section
       id="priorities"
-      className="py-24 md:py-32 relative bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden"
+      className="py-8 md:py-12 relative bg-gradient-to-br from-gray-50 to-gray-100 overflow-hidden"
     >
-      {/* Subtle background decoration */}
-      <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-emerald-600 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-80 h-80 bg-emerald-800 rounded-full blur-3xl"></div>
-      </div>
-
       <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
-        <motion.div
-          className="text-center mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-100px' }}
-          transition={{ duration: 0.8, ease: [0.25, 0.46, 0.45, 0.94] }}
-        >
-          <div className="inline-flex items-center justify-center p-2 mb-6 bg-emerald-100 rounded-full">
-            <div className="bg-emerald-600 p-3 rounded-full">
-              <FaBullseye className="w-6 h-6 text-white" />
-            </div>
-          </div>
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-            Key Areas of{' '}
-            <span className="text-emerald-700 relative">
-              Focus
-              <motion.div
-                className="absolute bottom-0 left-0 w-full h-1 bg-emerald-200 rounded-full"
-                initial={{ scaleX: 0 }}
-                whileInView={{ scaleX: 1 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, delay: 0.5 }}
-              />
-            </span>
-          </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-            Our strategic priorities drive meaningful impact across all dimensions of our mission
-          </p>
-        </motion.div>
-
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
           variants={containerVariants}
@@ -107,7 +71,7 @@ export default function KeyPriorities({ block }: VisionProps) {
           whileInView="visible"
           viewport={{ once: true, margin: '-50px' }}
         >
-          {visions.map((card, index) => (
+          {visions.map((card) => (
             <motion.div
               key={card.id}
               variants={cardVariants}
@@ -130,7 +94,7 @@ export default function KeyPriorities({ block }: VisionProps) {
                       >
                         <FaBullseye className="w-6 h-6 text-white" />
                       </motion.div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white text-center leading-tight text-justify">
+                      <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight text-justify">
                         {card.title}
                       </h3>
                     </div>

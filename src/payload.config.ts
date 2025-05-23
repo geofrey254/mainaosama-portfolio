@@ -6,6 +6,9 @@ import { buildConfig } from 'payload'
 import { fileURLToPath } from 'url'
 import sharp from 'sharp'
 import { s3Storage } from '@payloadcms/storage-s3'
+import { formBuilderPlugin } from '@payloadcms/plugin-form-builder'
+import { nodemailerAdapter } from '@payloadcms/email-nodemailer'
+import nodemailer from 'nodemailer'
 
 import { Users } from './collections/Users'
 import { Media } from './collections/Media'
@@ -13,6 +16,7 @@ import { Pages } from './collections/Pages'
 import { Projects } from './collections/Projects'
 import { Vision } from './collections/Vision'
 import Newsletter from './collections/Newsletter'
+import Photos from './collections/Photos'
 
 const filename = fileURLToPath(import.meta.url)
 const dirname = path.dirname(filename)
@@ -24,7 +28,7 @@ export default buildConfig({
       baseDir: path.resolve(dirname),
     },
   },
-  collections: [Users, Media, Pages, Projects, Vision, Newsletter],
+  collections: [Users, Media, Pages, Projects, Vision, Newsletter, Photos],
   editor: lexicalEditor(),
   secret: process.env.PAYLOAD_SECRET || '',
   serverURL: 'http://localhost:3000',
@@ -37,6 +41,18 @@ export default buildConfig({
     },
   }),
   sharp,
+  email: nodemailerAdapter({
+    defaultFromAddress: `${process.env.EMAIL_USER}`,
+    defaultFromName: 'Hon. Peter Maina(Maina Osama)',
+    transport: await nodemailer.createTransport({
+      host: process.env.SMTP_HOST,
+      port: Number(process.env.SMTP_PORT),
+      auth: {
+        user: process.env.SMTP_USER,
+        pass: process.env.SMTP_PASS,
+      },
+    }),
+  }),
   plugins: [
     s3Storage({
       collections: {
@@ -53,6 +69,27 @@ export default buildConfig({
         },
         region: process.env.S3_REGION,
         endpoint: process.env.S3_ENDPOINT,
+      },
+    }),
+    formBuilderPlugin({
+      fields: {
+        text: true,
+        textarea: true,
+        email: true,
+        number: true,
+        payment: false,
+      },
+      redirectRelationships: ['pages'],
+      defaultToEmail: 'devongeoffreymaina@gmail.com',
+      formOverrides: {
+        admin: {
+          group: 'Forms',
+        },
+      },
+      formSubmissionOverrides: {
+        admin: {
+          group: 'Forms',
+        },
       },
     }),
   ],

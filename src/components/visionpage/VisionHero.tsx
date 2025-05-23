@@ -1,8 +1,9 @@
 'use client'
 import React from 'react'
+
 import { motion } from 'framer-motion'
 
-export default function AchievementHero() {
+export default function VisionHero() {
   const fadeInUp = {
     hidden: { opacity: 0, y: 30 },
     visible: {
@@ -11,7 +12,6 @@ export default function AchievementHero() {
       transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] },
     },
   }
-
   return (
     <section className="relative pt-32 md:pt-36 md:pb-8 overflow-hidden">
       {/* Background shapes */}
@@ -23,14 +23,14 @@ export default function AchievementHero() {
       <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-16">
         <motion.div className="text-center" initial="hidden" animate="visible" variants={fadeInUp}>
           <span className="inline-block px-5 py-2 bg-emerald-700 text-white text-sm font-bold tracking-wide rounded-full mb-6">
-            Track Record
+            Vision
           </span>
           <h1 className="text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-            Proven <span className="text-emerald-800">Achievements</span>
+            Key Areas of <span className="text-emerald-800">Focus</span>
           </h1>
           <p className="text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed">
-            A comprehensive overview of impactful projects and initiatives that have transformed
-            communities and improved lives across our constituency.
+            A comprehensive overview of our key priorities and strategic focus areas that drive our
+            mission and vision.
           </p>
         </motion.div>
       </div>
