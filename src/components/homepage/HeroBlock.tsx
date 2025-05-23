@@ -17,6 +17,7 @@ interface HeroBlockProps {
 }
 
 export default function HeroSection({ block }: HeroBlockProps) {
+  // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [isDesktop, setIsDesktop] = useState(true)
   const heading = block?.heading
   const subheading = block?.subheading

@@ -33,7 +33,7 @@ export default async function AboutPage() {
   )
 }
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
+// eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 function renderBlock(block: any, index: number) {
   switch (block.blockType) {
     // case 'about':

@@ -4,8 +4,9 @@ import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/navigation/Footer'
 
 export const metadata = {
-  description: 'A blank template using Payload in a Next.js app.',
-  title: 'Payload Blank Template',
+  title: 'Portfolio – Hon. Peter Maina (Maina Osama)',
+  description:
+    'Discover the journey, achievements, and vision of Hon. Peter Maina. Explore his track record of leadership, community service, and development across the region.',
 }
 
 export default async function RootLayout(props: { children: React.ReactNode }) {

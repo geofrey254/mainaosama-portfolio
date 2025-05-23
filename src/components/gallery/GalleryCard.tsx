@@ -1,19 +1,14 @@
 'use client'
 import { useState } from 'react'
 import Image from 'next/image'
-import { X, Eye, Download, Share2, Heart } from 'lucide-react'
+import { X, Eye } from 'lucide-react'
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
 export default function GalleryCard({ item }: { item: any }) {
   const [showModal, setShowModal] = useState(false)
-  const [isLiked, setIsLiked] = useState(false)
 
   const openModal = () => setShowModal(true)
   const closeModal = () => setShowModal(false)
-  const toggleLike = (e: React.MouseEvent) => {
-    e.stopPropagation()
-    setIsLiked(!isLiked)
-  }
 
   return (
     <>

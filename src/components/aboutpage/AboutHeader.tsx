@@ -46,7 +46,7 @@ export default function AboutHeader() {
           >
             Committed to transforming communities through servant leadership, innovative solutions,
             and unwavering integrity. Learn more about the journey, vision, and values that drive
-            Hon. Peter Maina's public service.
+            Hon. Peter Maina{"'"}s public service.
           </motion.p>
         </div>
       </div>

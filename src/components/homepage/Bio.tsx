@@ -3,7 +3,7 @@ import React from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FaMapMarkerAlt, FaFlag, FaBriefcase, FaArrowRight } from 'react-icons/fa'
+import { FaArrowRight } from 'react-icons/fa'
 import { TiStarburst } from 'react-icons/ti'
 
 interface InfoContent {
@@ -82,25 +82,6 @@ export default function Bio({ block }: BioProps) {
       transition: { duration: 0.3 },
     },
   }
-
-  // Key information
-  const keyInfo = [
-    {
-      icon: <FaMapMarkerAlt className="w-5 h-5 text-amber-600" />,
-      label: 'Ward',
-      value: 'Uthiru/Ruthimitu',
-    },
-    {
-      icon: <FaFlag className="w-5 h-5 text-amber-600" />,
-      label: 'Party',
-      value: 'UDA',
-    },
-    {
-      icon: <FaBriefcase className="w-5 h-5 text-amber-600" />,
-      label: 'Role',
-      value: 'MCA',
-    },
-  ]
 
   return (
     <section className="py-24 md:py-32 bg-white overflow-hidden">

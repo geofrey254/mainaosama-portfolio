@@ -3,18 +3,6 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 
 export default function Biography() {
-  const fadeInUp = {
-    hidden: { opacity: 0, y: 30 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.8,
-        ease: [0.22, 1, 0.36, 1],
-      },
-    },
-  }
-
   const fadeInLeft = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -88,9 +76,9 @@ export default function Biography() {
               </p>
 
               <p>
-                With a background in Public Administration and a Master's degree in Governance and
-                Leadership, Peter has built his career on the foundation of ethical leadership and
-                result-oriented public service. Before assuming his current role, he worked
+                With a background in Public Administration and a Master{"'"}s degree in Governance
+                and Leadership, Peter has built his career on the foundation of ethical leadership
+                and result-oriented public service. Before assuming his current role, he worked
                 extensively in community development programs that transformed livelihoods across
                 the region.
               </p>

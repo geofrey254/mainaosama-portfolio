@@ -6,7 +6,7 @@ export async function GET() {
   const payloadConfig = await config
   const payload = await getPayload({ config: payloadConfig })
   const { docs: photos } = await payload.find({
-    collection: 'gallery',
+    collection: 'photos',
     depth: 2,
     limit: 100,
   })

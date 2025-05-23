@@ -1,5 +1,4 @@
 'use client'
-import { motion } from 'framer-motion'
 import Image from 'next/image'
 import { FaRegCalendarAlt, FaMapMarkerAlt } from 'react-icons/fa'
 import Link from 'next/link'
@@ -13,6 +12,7 @@ interface ProjImage {
 
 interface ProjectCont {
   id: number
+  slug: string
   title: string
   description: string
   impact: string
@@ -40,7 +40,7 @@ export default function AchievementsPage({ post }: { post: ProjectCont }) {
 
         {/* Before/After badge */}
         <div className="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-          <Link href="">More Details</Link>
+          <Link href={`/achievements/${post.slug}`}>More Details</Link>
         </div>
       </div>
 
