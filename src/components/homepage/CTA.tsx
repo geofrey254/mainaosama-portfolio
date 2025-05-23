@@ -61,7 +61,7 @@ export default function GetInvolved() {
 
     setSubmitting(true)
     try {
-      const res = await fetch(`${process.env.NEXT_PUBLIC_DEV_URL}/api/form-submissions`, {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_PAYLOAD_URL}/api/form-submissions`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(payload),
