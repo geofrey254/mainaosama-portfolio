@@ -47,7 +47,7 @@ export default function AchievementsPage({ post }: { post: ProjectCont }) {
       {/* post content */}
       <div className="p-4">
         <h3 className="text-lg font-bold text-gray-900 mb-2">{post.title}</h3>
-        <p className="text-sm text-gray-700 mb-4">{post.description}</p>
+        <p className="text-sm text-gray-700 mb-4 line-clamp-3">{post.description}</p>
 
         {/* post metadata */}
         <div className="space-y-2 mb-4">
