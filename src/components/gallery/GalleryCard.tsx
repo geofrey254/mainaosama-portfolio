@@ -41,7 +41,7 @@ export default function GalleryCard({ item }: { item: any }) {
 
           {/* Bottom Content */}
           <div className="absolute bottom-0 left-0 right-0 p-6 bg-gradient-to-t from-emerald-950/95 to-transparent">
-            <h3 className="text-xl font-bold text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
+            <h3 className="text-base font-bold text-white mb-2 transform translate-y-2 group-hover:translate-y-0 transition-transform duration-300">
               {item.title}
             </h3>
             <div className="flex items-center gap-2 opacity-0 group-hover:opacity-100 transition-all duration-300 delay-100">
