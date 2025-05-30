@@ -20,6 +20,7 @@ interface ProjImage {
 interface ProjectCont {
   id: number
   title: string
+  slug: string
   description: string
   impact: string
   date: string
@@ -82,7 +83,7 @@ export default function Impact({ block }: ImpactProps) {
 
                 {/* Before/After badge */}
                 <div className="absolute top-2 right-2 bg-amber-500 text-white text-xs font-bold px-2 py-1 rounded-full">
-                  <Link href="">More Details</Link>
+                  <Link href={`/achievements/${project.slug}`}>More Details</Link>
                 </div>
               </div>
 
