@@ -89,7 +89,7 @@ export default function Impact({ block }: ImpactProps) {
               {/* Project content */}
               <div className="p-4">
                 <h3 className="text-lg font-bold text-gray-900 mb-2">{project.title}</h3>
-                <p className="text-sm text-gray-700 mb-4">{project.description}</p>
+                <p className="text-sm text-gray-700 mb-4 line-clamp-3">{project.description}</p>
 
                 {/* Project metadata */}
                 <div className="space-y-2 mb-4">
