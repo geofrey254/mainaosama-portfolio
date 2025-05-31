@@ -4,6 +4,7 @@ import { LandingAbout } from '@/blocks/homepage/home-bio/schema'
 import { LandingImpact } from '@/blocks/homepage/impact/schema'
 import { LandingVision } from '@/blocks/homepage/vision/schema'
 import { LogosSection } from '@/blocks/homepage/logos-section/schema'
+import { Testimonial } from '@/blocks/homepage/testimonial/schema'
 import { About } from '@/blocks/about/schema'
 import { Contact } from '@/blocks/contactPage/schema'
 import { VisionPage } from '@/blocks/visionPage/schema'
@@ -41,6 +42,7 @@ export const Pages: CollectionConfig = {
         Contact,
         VisionPage,
         Achievement,
+        Testimonial,
       ],
     },
   ],

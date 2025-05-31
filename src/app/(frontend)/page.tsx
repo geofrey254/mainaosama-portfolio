@@ -10,6 +10,7 @@ import Vision from '@/components/homepage/Vision'
 import GetInvolved from '@/components/homepage/CTA'
 import config from '@/payload.config'
 import './styles.css'
+import Testimonial from '@/components/homepage/Testimonial'
 
 export default async function HomePage() {
   const payloadConfig = await config
@@ -48,6 +49,8 @@ function renderBlock(block: any, index: number) {
       return <Bio key={index} block={block} />
     case 'impact':
       return <Impact key={index} block={block} />
+    case 'testimonial':
+      return <Testimonial key={index} block={block} />
     case 'vision':
       return <Vision key={index} block={block} />
 

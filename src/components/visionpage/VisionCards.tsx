@@ -32,32 +32,6 @@ export default function KeyPriorities({ block }: VisionProps) {
     },
   }
 
-  const cardVariants = {
-    hidden: {
-      opacity: 0,
-      y: 30,
-      scale: 0.95,
-    },
-    visible: {
-      opacity: 1,
-      y: 0,
-      scale: 1,
-      transition: {
-        duration: 0.6,
-        ease: [0.25, 0.46, 0.45, 0.94],
-      },
-    },
-  }
-
-  const iconVariants = {
-    initial: { scale: 1, rotate: 0 },
-    hover: {
-      scale: 1.1,
-      rotate: 360,
-      transition: { duration: 0.3 },
-    },
-  }
-
   return (
     <section
       id="priorities"
@@ -72,79 +46,46 @@ export default function KeyPriorities({ block }: VisionProps) {
           viewport={{ once: true, margin: '-50px' }}
         >
           {visions.map((card) => (
-            <motion.div
+            <div
               key={card.id}
-              variants={cardVariants}
-              whileHover={{
-                y: -8,
-                transition: { duration: 0.3, ease: [0.25, 0.46, 0.45, 0.94] },
-              }}
-              className="group"
+              className="bg-white rounded-lg shadow-md h-full hover:shadow-lg transition-shadow border-2 border-emerald-700"
             >
-              <div className="bg-white rounded-3xl shadow-lg h-full hover:shadow-2xl transition-all duration-300 border border-gray-100 overflow-hidden backdrop-blur-sm">
-                {/* Header with improved design */}
-                <div className="relative">
-                  <div className="bg-gradient-to-r from-emerald-600 to-emerald-700 px-6 py-8">
-                    <div className="flex items-center justify-center gap-4">
-                      <motion.div
-                        variants={iconVariants}
-                        initial="initial"
-                        whileHover="hover"
-                        className="bg-white/20 p-3 rounded-full backdrop-blur-sm"
-                      >
-                        <FaBullseye className="w-6 h-6 text-white" />
-                      </motion.div>
-                      <h3 className="text-2xl md:text-3xl font-bold text-white leading-tight text-justify">
-                        {card.title}
-                      </h3>
-                    </div>
+              <div className="p-6">
+                {/* Header Section */}
+                <div className="flex items-center gap-4 mb-6 pb-4 border-b border-gray-100">
+                  <div className="w-14 h-14 bg-amber-50 rounded-full flex items-center justify-center flex-shrink-0">
+                    <FaBullseye size={28} className="text-amber-600" />
                   </div>
-                  {/* Decorative element */}
-                  <div className="absolute -bottom-2 left-1/2 transform -translate-x-1/2">
-                    <div className="w-4 h-4 bg-emerald-600 rotate-45"></div>
+                  <div className="flex-1">
+                    <h3 className="text-xl font-bold text-gray-900 uppercase tracking-wide">
+                      {card.title}
+                    </h3>
                   </div>
                 </div>
 
-                {/* Content with improved spacing and typography */}
-                <div className="p-8 pt-10">
-                  <p className="text-gray-700 text-lg leading-relaxed mb-8 font-medium">
-                    {card.description}
-                  </p>
-
-                  {/* Enhanced key points */}
-                  <div className="space-y-4">
-                    <h4 className="text-sm font-semibold text-gray-500 uppercase tracking-wider mb-4">
-                      Key Initiatives
-                    </h4>
-                    <ul className="space-y-4">
-                      {card.keyPoints.map((point, pointIndex) => (
-                        <motion.li
-                          key={point.id}
-                          initial={{ opacity: 0, x: -20 }}
-                          whileInView={{ opacity: 1, x: 0 }}
-                          viewport={{ once: true }}
-                          transition={{
-                            duration: 0.5,
-                            delay: 0.1 * pointIndex,
-                          }}
-                          className="flex items-start group/item"
-                        >
-                          <div className="flex-shrink-0 mt-1.5 mr-4">
-                            <div className="w-2 h-2 bg-emerald-500 rounded-full group-hover/item:bg-emerald-600 transition-colors duration-200"></div>
-                          </div>
-                          <span className="text-gray-700 leading-relaxed group-hover/item:text-gray-900 transition-colors duration-200">
-                            {point.point}
-                          </span>
-                        </motion.li>
-                      ))}
-                    </ul>
-                  </div>
+                {/* Description Section */}
+                <div className="mb-6">
+                  <p className="text-gray-700 leading-relaxed text-base">{card.description}</p>
                 </div>
 
-                {/* Subtle bottom accent */}
-                <div className="h-1 bg-gradient-to-r from-emerald-200 via-emerald-300 to-emerald-200 group-hover:from-emerald-400 group-hover:via-emerald-500 group-hover:to-emerald-400 transition-all duration-300"></div>
+                {/* Key Points Section */}
+                <div>
+                  <h4 className="text-sm font-semibold text-emerald-700 uppercase tracking-wide mb-3">
+                    Key Points
+                  </h4>
+                  <ul className="space-y-3">
+                    {card.keyPoints.map((point) => (
+                      <li key={point.id} className="flex items-start gap-3">
+                        <span className="text-emerald-600 font-bold text-lg leading-none mt-0.5">
+                          •
+                        </span>
+                        <span className="text-gray-700 leading-relaxed flex-1">{point.point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
-            </motion.div>
+            </div>
           ))}
         </motion.div>
       </div>

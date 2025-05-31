@@ -2,7 +2,16 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 
-export default function Biography() {
+interface BiographyProps {
+  block?: {
+    clause?: string
+    photo?: {
+      url: string
+    }
+  }
+}
+
+export default function Biography({ block }: BiographyProps) {
   const fadeInLeft = {
     hidden: { opacity: 0, x: -50 },
     visible: {
@@ -42,7 +51,7 @@ export default function Biography() {
             <div className="relative">
               <div className="aspect-[3/3] relative rounded-2xl overflow-hidden bg-white shadow-xl border-8 border-white">
                 <Image
-                  src="/maish.png"
+                  src={block?.photo?.url || '/speech.png'}
                   alt="Hon. Peter Maina - Official Portrait"
                   fill
                   className="object-cover object-top"
@@ -68,28 +77,7 @@ export default function Biography() {
             </h2>
 
             <div className="prose prose-lg text-gray-700 max-w-none space-y-5 text-justify">
-              <p>
-                Hon. Peter Maina (popularly known as Maina Osama) is a visionary leader with a
-                profound commitment to community development and sustainable governance. Born and
-                raised in the heart of our region, he understands firsthand the challenges and
-                aspirations of our people.
-              </p>
-
-              <p>
-                With a background in Public Administration and a Master{"'"}s degree in Governance
-                and Leadership, Peter has built his career on the foundation of ethical leadership
-                and result-oriented public service. Before assuming his current role, he worked
-                extensively in community development programs that transformed livelihoods across
-                the region.
-              </p>
-
-              <p>
-                As an elected representative since 2015, Hon. Maina has championed policies focused
-                on education reform, healthcare accessibility, and economic empowerment. His
-                collaborative leadership style brings together diverse stakeholders to create
-                holistic solutions that address both immediate needs and long-term development
-                goals.
-              </p>
+              {block?.clause?.split(/\n{2,}/).map((para, index) => <p key={index}>{para}</p>)}{' '}
             </div>
           </motion.div>
         </div>

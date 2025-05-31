@@ -257,6 +257,14 @@ export interface Page {
             blockName?: string | null;
             blockType: 'achievement';
           }
+        | {
+            name: string;
+            quote: string;
+            image: number | Media;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'testimonial';
+          }
       )[]
     | null;
   updatedAt: string;
@@ -742,6 +750,15 @@ export interface PagesSelect<T extends boolean = true> {
           | T
           | {
               projects?: T;
+              id?: T;
+              blockName?: T;
+            };
+        testimonial?:
+          | T
+          | {
+              name?: T;
+              quote?: T;
+              image?: T;
               id?: T;
               blockName?: T;
             };

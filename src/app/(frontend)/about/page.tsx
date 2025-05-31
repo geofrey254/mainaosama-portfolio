@@ -27,7 +27,6 @@ export default async function AboutPage() {
   return (
     <>
       <AboutHeader />
-      <Biography />
       {page.layout?.map((block, index) => renderBlock(block, index))}
     </>
   )
@@ -36,8 +35,8 @@ export default async function AboutPage() {
 // eslint-disable-next-line @typescript-eslint/no-explicit-any, @typescript-eslint/no-unused-vars
 function renderBlock(block: any, index: number) {
   switch (block.blockType) {
-    // case 'about':
-    //   return <AboutHero key={index} block={block} />
+    case 'about':
+      return <Biography key={index} block={block} />
     // case 'goals':
     //   return <GoalsSection key={index} block={block} />
     // case 'core-values':

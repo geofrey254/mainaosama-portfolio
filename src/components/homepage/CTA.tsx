@@ -195,9 +195,23 @@ export default function GetInvolved() {
                     </div>
                     <div>
                       <p className="text-sm text-emerald-100 font-medium">Visit Us</p>
-                      <p className="text-lg">123 Community Avenue</p>
-                      <p className="text-emerald-100">District Office, Building 4</p>
-                      <p className="text-emerald-100">Constituency Area, CO 12345</p>
+                      <address className="not-italic">
+                        Village Park, Opposite Githima Church
+                        <br />
+                        Dagoretti Centre
+                      </address>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <div className="bg-white/10 p-3 rounded-full mr-4">
+                      <FaMapMarkerAlt className="w-5 h-5 text-amber-300" />
+                    </div>
+                    <div>
+                      <p className="text-sm text-emerald-100 font-medium">Visit Us</p>
+                      <address className="not-italic">
+                        Chief{"'"}s Camp, Muthua
+                        <br />
+                      </address>
                     </div>
                   </div>
                 </div>

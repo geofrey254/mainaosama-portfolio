@@ -16,7 +16,7 @@ export default function LogosSection({ block }: LogoProps) {
   if (!logos.length) return null
 
   return (
-    <section className="bg-emerald-700 py-0 w-full">
+    <section className="bg-emerald-700 border-y-4 border-amber-600 py-0 w-full">
       <div className="mx-auto md:px-4">
         <div className="relative mx-auto">
           <Carousel
