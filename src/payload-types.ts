@@ -220,6 +220,17 @@ export interface Page {
             blockType: 'vision';
           }
         | {
+            company_logos?:
+              | {
+                  logo: number | Media;
+                  id?: string | null;
+                }[]
+              | null;
+            id?: string | null;
+            blockName?: string | null;
+            blockType: 'logos-section';
+          }
+        | {
             clause: string;
             photo: number | Media;
             title: string;
@@ -688,6 +699,18 @@ export interface PagesSelect<T extends boolean = true> {
               subheading?: T;
               quote?: T;
               visions?: T;
+              id?: T;
+              blockName?: T;
+            };
+        'logos-section'?:
+          | T
+          | {
+              company_logos?:
+                | T
+                | {
+                    logo?: T;
+                    id?: T;
+                  };
               id?: T;
               blockName?: T;
             };

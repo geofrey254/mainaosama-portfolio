@@ -3,6 +3,7 @@ import type { CollectionConfig } from 'payload'
 import { LandingAbout } from '@/blocks/homepage/home-bio/schema'
 import { LandingImpact } from '@/blocks/homepage/impact/schema'
 import { LandingVision } from '@/blocks/homepage/vision/schema'
+import { LogosSection } from '@/blocks/homepage/logos-section/schema'
 import { About } from '@/blocks/about/schema'
 import { Contact } from '@/blocks/contactPage/schema'
 import { VisionPage } from '@/blocks/visionPage/schema'
@@ -35,6 +36,7 @@ export const Pages: CollectionConfig = {
         LandingAbout,
         LandingImpact,
         LandingVision,
+        LogosSection,
         About,
         Contact,
         VisionPage,

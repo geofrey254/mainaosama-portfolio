@@ -137,8 +137,8 @@ export default function HeroSection({ block }: HeroBlockProps) {
             variants={containerVariants}
           >
             <motion.div variants={fadeInUp}>
-              <span className="inline-block px-5 py-2 bg-emerald-700 text-white text-sm font-medium tracking-wide rounded-full mb-6">
-                Servant Leader
+              <span className="inline-block px-5 py-2 bg-emerald-700 text-white text-sm font-medium tracking-wide rounded-full mb-3">
+                #tunazidikutimiza
               </span>
             </motion.div>
 
@@ -206,12 +206,8 @@ export default function HeroSection({ block }: HeroBlockProps) {
 
               {/* Vision badge */}
               <motion.div className="absolute -bottom-10 -left-10 z-30" variants={badgeVariants}>
-                <div className="w-24 h-24 rounded-full bg-white shadow-xl flex items-center justify-center p-1">
-                  <div className="w-full h-full rounded-full bg-gradient-to-br from-emerald-100 to-emerald-200 flex items-center justify-center text-emerald-800">
-                    <div className="text-center">
-                      <div className="font-bold text-2xl"></div>
-                    </div>
-                  </div>
+                <div className="w-24 h-24 rounded-full flex items-center justify-center p-1">
+                  <Image src="/zcounty.png" width={80} height={80} alt="nairobi county logo" />
                 </div>
               </motion.div>
             </div>

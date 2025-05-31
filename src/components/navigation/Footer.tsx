@@ -81,11 +81,16 @@ export default function Footer() {
               <li className="flex items-start text-sm">
                 <FaMapMarkerAlt className="mr-3 mt-1 text-amber-400" />
                 <address className="not-italic">
-                  Opposite Githima Church
-                  <br />
-                  MCAs Office, Ground Floor
+                  Village Park, Opposite Githima Church
                   <br />
                   Dagoretti Centre
+                </address>
+              </li>
+              <li className="flex items-start text-sm">
+                <FaMapMarkerAlt className="mr-3 mt-1 text-amber-400" />
+                <address className="not-italic">
+                  Chief{"'"}s Camp, Muthua
+                  <br />
                 </address>
               </li>
             </ul>

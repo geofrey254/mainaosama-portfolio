@@ -103,7 +103,7 @@ const Navbar = () => {
                 isScrolled ? 'text-emerald-800' : 'text-emerald-700'
               }`}
             >
-              Hon. Peter Maina
+              Maina Osama
             </div>
           </Link>
 

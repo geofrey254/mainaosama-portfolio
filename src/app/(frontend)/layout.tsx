@@ -4,7 +4,7 @@ import Navbar from '@/components/navigation/Navbar'
 import Footer from '@/components/navigation/Footer'
 
 export const metadata = {
-  title: 'Portfolio – Hon. Peter Maina (Maina Osama)',
+  title: 'Maina Osama – Hon. Peter Maina',
   description:
     'Discover the journey, achievements, and vision of Hon. Peter Maina. Explore his track record of leadership, community service, and development across the region.',
 }
