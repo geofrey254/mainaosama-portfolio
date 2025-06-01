@@ -1,5 +1,7 @@
 import type { MetadataRoute } from 'next'
 
+export const dynamic = 'force-dynamic'
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const projectRes = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/projects`, {
     next: { revalidate: 3600 },
