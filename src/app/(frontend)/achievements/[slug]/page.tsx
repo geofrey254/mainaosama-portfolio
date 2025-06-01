@@ -8,6 +8,70 @@ import { fetchAllAchievements } from '@/lib/achieveUtil'
 import Image from 'next/image'
 import { CalendarDays, MapPin, Lightbulb } from 'lucide-react'
 
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
+  const { slug } = await params
+
+  const payloadConfig = await config
+  const payload = await getPayload({ config: payloadConfig })
+
+  const { docs } = await payload.find({
+    collection: 'projects',
+    where: {
+      slug: {
+        equals: slug,
+      },
+    },
+    depth: 2,
+  })
+
+  const project = docs[0]
+
+  if (!project) {
+    return {
+      title: 'Project Not Found – Hon. Peter Maina | Uthiru/Ruthimitu MCA',
+      description:
+        'The project you are looking for could not be found. Explore more achievements and development milestones from Hon. Peter Maina (Maina Osama), MCA Uthiru/Ruthimitu.',
+    }
+  }
+
+  const { title, impact, location, date, image } = project
+
+  const ogImage =
+    image &&
+    image[0] &&
+    typeof image[0].photo === 'object' &&
+    image[0].photo !== null &&
+    'url' in image[0].photo
+      ? (image[0].photo.url as string)
+      : '' // Fallback image
+
+  const fullTitle = `${title} – Hon. Peter Maina Achievements`
+  const fullDescription = `${impact} | Implemented in ${location} on ${date}. Learn more about this impactful project and how it’s transforming lives in Uthiru/Ruthimitu.`
+
+  return {
+    title: fullTitle,
+    description: fullDescription,
+    metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITE_URL}`),
+    openGraph: {
+      title: fullTitle,
+      description: fullDescription,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL}/achievements/${slug}`,
+      images: [
+        {
+          url: ogImage,
+          width: 1200,
+          height: 630,
+          alt: title || 'Hon. Peter Maina Project Highlight',
+        },
+      ],
+      type: 'article',
+    },
+    alternates: {
+      canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/achievements/${slug}`,
+    },
+  }
+}
+
 export default async function ProjectDetails({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
   const payloadClient = await getPayload({ config })

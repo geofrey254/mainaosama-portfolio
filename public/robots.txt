@@ -1,0 +1,21 @@
+# Allow all crawlers
+User-agent: *
+Allow: /
+
+# Explicitly allow important public pages
+Allow: /about
+Allow: /contact
+Allow: /vision
+Allow: /achievements/
+Allow: /media
+
+# Block access to sensitive or backend paths
+Disallow: /admin/
+Disallow: /api/
+Disallow: /__next/
+
+# Define preferred domain
+Host: https://www.mainaosama.com
+
+# Sitemap location
+Sitemap: https://www.mainaosama.com/sitemap.xml

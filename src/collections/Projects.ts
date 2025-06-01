@@ -8,6 +8,9 @@ export const Projects: CollectionConfig = {
     description: 'Add Project',
     group: 'Content',
   },
+  access: {
+    read: () => true,
+  },
   fields: [
     {
       name: 'title',

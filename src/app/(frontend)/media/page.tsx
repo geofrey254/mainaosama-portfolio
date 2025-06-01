@@ -11,6 +11,32 @@ type Props = {
     page?: string
   }>
 }
+
+export const metadata = {
+  title: 'Media Gallery | Hon. Peter Maina – MCA Uthiru/Ruthimitu',
+  description:
+    'Browse the official media gallery of Hon. Peter Maina (Maina Osama), MCA for Uthiru/Ruthimitu. View photos, videos, and event highlights capturing his work and impact in Nairobi County.',
+  metadataBase: new URL(`${process.env.NEXT_PUBLIC_SITE_URL}/media`),
+  openGraph: {
+    title: 'Media Gallery | Hon. Peter Maina in Action – Photos & Videos',
+    description:
+      'Explore a visual archive of Hon. Peter Maina’s public service journey. From community events to project launches, see how leadership comes to life in Uthiru/Ruthimitu Ward.',
+    url: `${process.env.NEXT_PUBLIC_SITE_URL}/media`,
+    images: [
+      {
+        url: '/maish.png', // Replace with a group photo, event banner, or press coverage image
+        width: 1200,
+        height: 630,
+        alt: 'Hon. Peter Maina Media – Leadership in Motion',
+      },
+    ],
+    type: 'website',
+  },
+  alternates: {
+    canonical: `${process.env.NEXT_PUBLIC_SITE_URL}/media`,
+  },
+}
+
 export default async function GalleryPage({ searchParams }: Props) {
   const resolvedParams = await searchParams
   const currentPage = Number(resolvedParams?.page) || 1
