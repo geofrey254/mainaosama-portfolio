@@ -171,7 +171,7 @@ export default function Bio({ block }: BioProps) {
                 href="/about"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-emerald-700 to-emerald-600 text-white rounded-lg font-bold hover:from-emerald-800 hover:to-emerald-700 transition-all duration-300"
               >
-                Learn More About My Journey
+                Learn More
                 <FaArrowRight className="ml-3" />
               </Link>
             </motion.div>

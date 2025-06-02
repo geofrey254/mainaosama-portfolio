@@ -3,7 +3,8 @@ import { useEffect, useState } from 'react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
-import { FaArrowRight, FaUsers } from 'react-icons/fa'
+import { FaArrowRight } from 'react-icons/fa'
+import { TbTargetArrow } from 'react-icons/tb'
 
 interface HeroBlockProps {
   block: {
@@ -163,7 +164,7 @@ export default function HeroSection({ block }: HeroBlockProps) {
             >
               <motion.div variants={buttonVariants} whileHover="hover">
                 <Link href="/achievements" passHref>
-                  <button className="flex items-center justify-center px-8 py-4 bg-emerald-700 text-white rounded-lg font-bold text-lg shadow-lg hover:bg-emerald-800 transition-all duration-300 w-full sm:w-auto">
+                  <button className="flex items-center justify-center px-8 py-4 bg-emerald-700 text-white rounded-lg font-bold text-lg shadow-lg hover:bg-emerald-800 transition-all duration-300 w-full sm:w-auto cursor-pointer">
                     See Achievements
                     <FaArrowRight className="ml-3" />
                   </button>
@@ -172,9 +173,9 @@ export default function HeroSection({ block }: HeroBlockProps) {
 
               <motion.div variants={buttonVariants} whileHover="hover">
                 <Link href="/join" passHref>
-                  <button className="flex items-center justify-center px-8 py-4 bg-white border-2 border-amber-600 text-amber-700 rounded-lg font-bold text-lg hover:bg-amber-50 transition-all duration-300 w-full sm:w-auto">
-                    Join the Movement
-                    <FaUsers className="ml-3" />
+                  <button className="flex items-center justify-center px-8 py-4 bg-white border-2 border-amber-600 text-amber-700 rounded-lg font-bold text-lg hover:bg-amber-50 transition-all duration-300 w-full sm:w-auto cursor-pointer">
+                    Focus Areas
+                    <TbTargetArrow className="ml-3" />
                   </button>
                 </Link>
               </motion.div>

@@ -59,7 +59,7 @@ export default function Impact({ block }: ImpactProps) {
               <div className="flex justify-center mb-2">
                 <FaAngleDoubleDown className="text-amber-700 animate-bounce" />
               </div>
-              <div className="text-2xl font-bold text-gray-900">{stat.value}</div>
+              <div className="text-2xl font-bold text-gray-900">{stat.value} +</div>
               <div className="text-xs text-gray-600">{stat.label}</div>
             </div>
           ))}

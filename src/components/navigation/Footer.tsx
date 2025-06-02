@@ -1,14 +1,7 @@
 'use client'
 import { AlertCircle } from 'lucide-react'
 import React, { useState } from 'react'
-import {
-  FaFacebook,
-  FaTwitter,
-  FaWhatsapp,
-  FaEnvelope,
-  FaMapMarkerAlt,
-  FaPhone,
-} from 'react-icons/fa'
+import { FaFacebook, FaWhatsapp, FaEnvelope, FaMapMarkerAlt, FaPhone } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
 
 export default function Footer() {
