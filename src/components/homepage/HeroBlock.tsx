@@ -172,7 +172,7 @@ export default function HeroSection({ block }: HeroBlockProps) {
               </motion.div>
 
               <motion.div variants={buttonVariants} whileHover="hover">
-                <Link href="/join" passHref>
+                <Link href="/vision" passHref>
                   <button className="flex items-center justify-center px-8 py-4 bg-white border-2 border-amber-600 text-amber-700 rounded-lg font-bold text-lg hover:bg-amber-50 transition-all duration-300 w-full sm:w-auto cursor-pointer">
                     Focus Areas
                     <TbTargetArrow className="ml-3" />
