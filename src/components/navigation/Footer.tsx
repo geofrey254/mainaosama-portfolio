@@ -9,6 +9,7 @@ import {
   FaMapMarkerAlt,
   FaPhone,
 } from 'react-icons/fa'
+import { FaXTwitter } from 'react-icons/fa6'
 
 export default function Footer() {
   const [email, setEmail] = useState('')
@@ -118,16 +119,16 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-6 border-b border-emerald-600 pb-2">Follow Us</h3>
             <div className="flex space-x-4 mb-6">
               <a
-                href="#facebook"
+                href="https://www.facebook.com/MainahOsama"
                 className="bg-emerald-700 h-10 w-10 rounded-full flex items-center justify-center hover:bg-amber-500 transition-colors"
               >
                 <FaFacebook />
               </a>
               <a
-                href="#twitter"
+                href="https://x.com/HonMainaOsama"
                 className="bg-emerald-700 h-10 w-10 rounded-full flex items-center justify-center hover:bg-amber-500 transition-colors"
               >
-                <FaTwitter />
+                <FaXTwitter />
               </a>
               <a
                 href="#whatsapp"
