@@ -166,7 +166,7 @@ export default function HeroSection({ block }: HeroBlockProps) {
                 <Link href="/achievements" passHref>
                   <button className="flex items-center justify-center px-8 py-4 bg-emerald-700 text-white rounded-lg font-bold text-lg shadow-lg hover:bg-emerald-800 transition-all duration-300 w-full sm:w-auto cursor-pointer">
                     See Achievements
-                    <FaArrowRight className="ml-3" />
+                    <FaArrowRight className="ml-3" /> 
                   </button>
                 </Link>
               </motion.div>
