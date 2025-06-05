@@ -175,7 +175,7 @@ export default function GetInvolved() {
                     </div>
                     <div>
                       <p className="text-sm text-emerald-100 font-medium">Call Us</p>
-                      <p className="text-lg">(123) 456-7890</p>
+                      <p className="text-lg">+254 701 234567</p>
                     </div>
                   </div>
 
@@ -185,7 +185,7 @@ export default function GetInvolved() {
                     </div>
                     <div>
                       <p className="text-sm text-emerald-100 font-medium">Email Us</p>
-                      <p className="text-lg">contact@example.com</p>
+                      <p className="text-lg">mainaosama@gmail.com</p>
                     </div>
                   </div>
 

@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import { fetchAllAchievements } from '@/lib/achieveUtil'
 import Image from 'next/image'
 import { CalendarDays, MapPin, Lightbulb } from 'lucide-react'
+import { Badge } from '@/components/ui/badge'
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
@@ -118,7 +119,7 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
       <section className="bg-white py-12 px-4 md:px-12">
         <div className="grid grid-cols-1  md:grid-cols-2 gap-6 max-w-6xl mx-auto">
           {program.image.map((img, index) => (
-            <div key={index} className="overflow-hidden rounded-2xl shadow-md">
+            <div key={index} className="relative overflow-hidden rounded-2xl shadow-md">
               <Image
                 src={
                   typeof img.photo === 'object' && img.photo !== null && 'url' in img.photo
@@ -130,6 +131,13 @@ export default async function ProjectDetails({ params }: { params: Promise<{ slu
                 height={400}
                 className="object-cover w-full h-64 transition-transform hover:scale-105"
               />
+              <div className="absolute top-0 left-0 right-0 p-2">
+                <Badge className="text-sm font-bold bg-emerald-700 text-white mt-2 capitalize">
+                  {typeof img.photo === 'object' && img.photo !== null && 'alt' in img.photo
+                    ? img.photo.alt
+                    : ''}
+                </Badge>
+              </div>
             </div>
           ))}
         </div>

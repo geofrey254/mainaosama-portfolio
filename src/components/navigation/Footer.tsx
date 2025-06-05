@@ -60,7 +60,7 @@ export default function Footer() {
                   href="mailto:contact@example.com"
                   className="hover:text-amber-300 transition-colors text-sm"
                 >
-                  mainapetermwangi@gmail.com
+                  mainaosama@gmail.com
                 </a>
               </li>
               <li className="flex items-center">
