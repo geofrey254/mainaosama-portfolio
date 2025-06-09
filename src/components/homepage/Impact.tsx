@@ -75,7 +75,7 @@ export default function Impact({ block }: ImpactProps) {
               {/* Project image */}
               <div className="relative h-40 overflow-hidden">
                 <Image
-                  src={project.image[0].photo.url}
+                  src={project.image[1].photo.url}
                   alt={project.title}
                   fill
                   className="object-cover"

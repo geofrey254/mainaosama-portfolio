@@ -31,8 +31,8 @@ export default function AchievementsPage({ post }: { post: ProjectCont }) {
       <div className="relative h-40 overflow-hidden">
         {post.image?.length > 0 && (
           <Image
-            src={post.image[0].photo.url}
-            alt={post.image[0].photo.alt || post.title}
+            src={post.image[1].photo.url}
+            alt={post.image[1].photo.alt || post.title}
             fill
             className="object-cover"
           />
