@@ -118,7 +118,7 @@ export default function Impact({ block }: ImpactProps) {
         {/* Call to action */}
         <div className="text-center">
           <Link
-            href="#"
+            href="/achievements"
             className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-amber-600 to-amber-500 text-white rounded-lg font-medium hover:from-amber-700 hover:to-amber-600 transition-colors"
           >
             View All Projects
