@@ -36,7 +36,7 @@ export default buildConfig({
   typescript: {
     outputFile: path.resolve(dirname, 'payload-types.ts'),
   },
-  cors: ['https://www.mainaosama.com'],
+  cors: ['https://mainaosama.com', 'https://www.mainaosama.com'],
   db: postgresAdapter({
     pool: {
       connectionString: process.env.DATABASE_URI || '',
